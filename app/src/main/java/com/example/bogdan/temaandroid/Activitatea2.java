@@ -21,6 +21,7 @@ public class Activitatea2 extends AppCompatActivity {
     public void fIntoarcere(View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        
         finish();
     }
 }
