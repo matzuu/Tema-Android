@@ -87,6 +87,11 @@ public class PrimulFragment extends Fragment {
         return view;
     }
 
+    public void onClickToast(View v)
+    {
+        Toast.makeText(getActivity(), "Clicked on Button", Toast.LENGTH_LONG).show();
+    }
+
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {

@@ -26,6 +26,8 @@ public class MainActivity extends AppCompatActivity{
         //setup the pager
         setupViewPager(mViewPager);
 
+        DatabaseInitializer.populateAsync(AppDatabase.getAppDatabase(this));
+
     }
     private void setupViewPager(ViewPager viewPager){
         SectionsStatePagerAdapter adapter = new SectionsStatePagerAdapter(getSupportFragmentManager());
@@ -54,4 +56,9 @@ public class MainActivity extends AppCompatActivity{
         return true;
     }
 
+    @Override
+    protected void onDestroy() {
+        AppDatabase.destroyInstance();
+        super.onDestroy();
+    }
 }
